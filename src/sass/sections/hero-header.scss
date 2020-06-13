@@ -1,0 +1,131 @@
+.hero-header {
+  padding: 24px 0 226px;
+  background-image: linear-gradient(rgba($color-hover, 0.9),
+      rgba($color-nav-hover, 0.9)),
+    url(../images/hero-bg.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+
+  @media (min-resolution: 192dpi) {
+    background-image: linear-gradient(rgba($color-hover, 0.9), rgba($color-nav-hover, 0.9)),
+      url(../images/hero-bg@2x.png);
+  }
+
+  &__link {
+    color: $color-text-hero;
+    transition: all 200ms linear;
+    display: block;
+    text-decoration: none;
+  }
+
+  &__main-nav {
+    margin-bottom: 134px;
+  }
+
+  &__main-title {
+    margin-bottom: 114px;
+  }
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  &__item_right {
+    display: flex;
+  }
+}
+
+.logo {
+  @include text ($fs:30px, $fw:700, $color:$color-text-hero);
+
+  &:hover,
+  &:focus {
+    color: $color-nav-hover;
+  }
+}
+
+.nav-list {
+  @extend %list;
+
+  &__item {
+    position: relative;
+    margin-right: 54px;
+    @include text($ttr:uppercase);
+
+    &::after {
+      content: "";
+      display: block;
+      margin-top: 8px;
+      width: 100%;
+      height: 3px;
+      background-color: $color-nav-hover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 200ms linear;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      .hero-header__link {
+        color: $color-nav-hover;
+      }
+    }
+  }
+}
+
+.button-list {
+  @extend %list;
+
+  &__icon {
+    width: 18px;
+    fill: $color-text-hero;
+
+    &:hover {
+      fill: $color-nav-hover;
+    }
+
+    &-shopping {
+      height: 15px;
+      margin-right: 42px;
+    }
+
+    &-search {
+      height: 18px;
+    }
+  }
+}
+
+
+.main-title {
+  max-width: 960px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  @include text ($fs:150px, $lh:140px, $fw:700, $color:$color-text-hero, $ttr:uppercase, $ta:center);
+
+  &__text-decor {
+    display: block;
+    @include text ($ff:$font-decor, $fs:72px, $lh:140px, $color:$color-text-hero, $ttr:initial, $ta:center);
+  }
+}
+
+.link-button {
+  max-width: 160px;
+  padding: 10px;
+  margin: 0 auto;
+  @include text ($fw:700, $color:$color-text-hero, $ttr:uppercase, $ta:center);
+  border: 3px solid $color-text-hero;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    border: 3px solid $color-hover;
+    color: $color-hover;
+  }
+}

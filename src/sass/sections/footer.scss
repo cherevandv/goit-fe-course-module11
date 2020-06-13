@@ -1,0 +1,56 @@
+.footer {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $color-line-footer;
+
+  &__info {
+    display: flex;
+    @include text ($lh:17px);
+  }
+
+  &__link {
+    margin-left: 4px;
+    text-decoration: none;
+    color: $color-hover;
+
+    &:hover {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.contact-form {
+  display: flex;
+
+  &__input {
+    width: 234px;
+    height: 40px;
+    border: 1px solid $color-input-border;
+    padding-left: 12px;
+    @include text ($ff:$font-text, $fs:15px, $lh:24px, $fw:300, $ttr:capitalize);
+    font-style: italic;
+    outline: none;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+  }
+
+  &__btn {
+    width: 150px;
+    height: 40px;
+    background-color: $color-accent;
+    @include text ($fs:15px, $lh:18px, $fw:700, $color:$color-text-hero, $ttr:uppercase, $ta:center);
+    transition: all linear 200ms;
+
+    &:hover,
+    &:focus {
+      color: $color-hover;
+      box-shadow: inset 0 0 0 3px $color-hover;
+    }
+  }
+}

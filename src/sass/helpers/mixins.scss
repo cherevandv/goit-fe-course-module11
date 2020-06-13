@@ -1,0 +1,9 @@
+@mixin text($ff:$main-font, $fs:14px, $lh:1.15, $fw:400, $color:$color-title, $ttr:none, $ta:left) {
+  font-family: $ff;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $color;
+  text-transform: $ttr;
+  text-align: $ta;
+}

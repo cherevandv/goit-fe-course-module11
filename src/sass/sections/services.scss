@@ -1,0 +1,60 @@
+.services {
+  padding-top: 50px;
+
+  &__title-section {
+    margin-bottom: 64px;
+  }
+}
+
+.title-section__text-decor {
+  display: block;
+  @include text ($ff:$font-decor, $fs:24px, $lh:29px, $ttr:initial);
+}
+
+.services-list {
+  @extend %list;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &__item {
+    display: flex;
+    justify-content: space-around;
+    width: 366px;
+    margin-bottom: 94px;
+
+    &-alarm:hover .services-list__icon_alarm,
+    &-line:hover .services-list__icon_line,
+    &-computer:hover .services-list__icon_computer,
+    &-book:hover .services-list__icon_book,
+    &-home:hover .services-list__icon_home,
+    &-image:hover .services-list__icon_image {
+      fill: $color-hover;
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    fill: $color-accent;
+    transition: fill linear 200ms;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 0 12px;
+
+    &-subtitle {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    @include text ($ff:$font-text, $fs:15px, $lh:24px, $color:$color-description);
+  }
+}
+
+.list__subtitle {
+  @include text ($ttr:uppercase);
+}
